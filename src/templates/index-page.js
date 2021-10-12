@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 
+import HeaderName from '../components/HeaderName'
+
 export const IndexPageTemplate = ({
   image,
   title,
@@ -16,52 +18,58 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
+    <div className="headerContainer" id="headerContainer">
+      <h1 className="headerName">Salazar</h1>
+      <HeaderName></HeaderName>
+    </div>
+    <div className="columns">
+      <div className="column">
+        <div className="gradientContainer">
+          <div className="gradient1">
+            <div className="inactiveGradient gradientOverlay" id="gradient0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="column">
+        <div className="gradientContainer">
+          <div className="gradient2">
+            <div className="inactiveGradient gradientOverlay" id="gradient0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="column">
+        <div className="gradientContainer">
+          <div className="gradient3">
+            <div className="inactiveGradient gradientOverlay" id="gradient0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="column">
+        <div className="gradientContainer">
+          <div className="gradient4">
+            <div className="inactiveGradient gradientOverlay" id="gradient0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="column">
+        <div className="gradientContainer">
+          <div className="gradient5">
+            <div className="inactiveGradient gradientOverlay" id="gradient0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="column">
+        <div className="gradientContainer">
+          <div className="gradient6">
+            <div className="inactiveGradient gradientOverlay" id="gradient0">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <section className="section section--gradient">

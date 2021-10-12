@@ -1,4 +1,10 @@
 @import "~bulma/sass/utilities/initial-variables"
+@font-face 
+  font-family: 'Amiri'
+  src: url("https://fonts.googleapis.com/css2?family=Amiri&display=swap")
+
+body
+  font-family: 'Amiri', serif
 
 // Config vars
 // Kaldi logo brand color: #FD461E
@@ -9,9 +15,14 @@ $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
+$header-hover-transition: color .3s linear
+
+::root
+  --brandColor: #fff
 
 .navbar .navbar-menu
   box-shadow:none !important
+  min-height: 8rem
 
 .content .taglist
   list-style: none
@@ -71,13 +82,24 @@ $black: #2b2523
 .margin-top-0
   margin-top: 0 !important
 
+.navbar-item
+  text-transform:  uppercase
+  font-family: 'Oswald', sans-serif
+  font-size: 1rem
+  font-weight: 700
+  transition: $header-hover-transition
+
+.navbar-item:hover
+  color: var(--brandColor) !important
+
+
 .navbar-item .icon
-  color: $primary
-// Override for use of svg's from https://simpleicons.org/
-.icon svg
-  width: 1.5rem
-  height: 1.5rem
-  fill: currentColor
+  color: $black
+  transition: $header-hover-transition
+
+.navbar-item .icon:hover
+  color: var(--brandColor)
+
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
@@ -114,17 +136,142 @@ $menu-label-color: $white-ter
 
 // blog roll
 .blog-list-item.is-featured
-  background-color: #d6400033;
+  background-color: #d6400033
 .blog-list-item header
-  display: flex;
-  margin-bottom: 1em;
+  display: flex
+  margin-bottom: 1em
 .blog-list-item .featured-thumbnail
-  flex-basis: 35%;
-  margin: 0 1.5em 0 0;
+  flex-basis: 35%
+  margin: 0 1.5em 0 0
+
+//homepage Salazar header
+.headerContainer 
+  width: 100%
+  height: 28vw
+  overflow: hidden
+  position: relative
+  font-family: 'Oswald', sans-serif
+
+.headerName 
+  letter-spacing: -10px
+  text-align: center
+  font-size: 27.5vw
+  margin: 0
+  vertical-align: text-top
+  background-color: #fff
+  color: white
+  margin: 0 auto
+  mix-blend-mode: screen
+  position: absolute
+  text-transform: uppercase
+  width: 100%
+  bottom: 0
+  border: 1px solid white
+  cursor: default
+  animation-duration: 1.5s
+  /*animation-delay: .5s;*/
+  animation-timing-function: ease-out
+  animation-iteration-count: 1
+  animation-name: slideInFromBottom
+  animation-fill-mode: forwards
+  font-family: 'Oswald', sans-serif
+  font-weight: 700
+  
+//homepage gradient boxes
+.gradientContainer
+  align-items: center
+  justify-content: center
+  width: 100%
 
 
+.gradient1
+  max-width: 80px
+  height: 20px
+  background: rgb(73,50,64)
+  background: -webkit-linear-gradient(left, rgba(73,50,64,1) 0%, rgba(255,0,153,1) 100%)
+  background: -o-linear-gradient(left, rgba(73,50,64,1) 0%, rgba(255,0,153,1) 100%)
+  background: linear-gradient(to right, rgba(73,50,64,1) 0%, rgba(255,0,153,1) 100%)
+  margin: 0 auto
+
+
+.gradient2
+  max-width: 80px
+  height: 20px
+  background: rgb(51,51,51)
+  background: -webkit-linear-gradient(left, rgba(51,51,51,1) 0%, rgba(221,24,24,1) 100%)
+  background: -o-linear-gradient(left, rgba(51,51,51,1) 0%, rgba(221,24,24,1) 100%)
+  background: linear-gradient(to right, rgba(51,51,51,1) 0%, rgba(221,24,24,1) 100%)
+  margin: 0 auto
+
+
+.gradient3
+  max-width: 80px
+  height: 20px
+  background: rgb(75,19,79)
+  background: -webkit-linear-gradient(left, rgba(75,19,79,1) 0%, rgba(201,75,75,1) 100%)
+  background: -o-linear-gradient(left, rgba(75,19,79,1) 0%, rgba(201,75,75,1) 100%)
+  background: linear-gradient(to right, rgba(75,19,79,1) 0%, rgba(201,75,75,1) 100%)
+  margin: 0 auto
+
+
+.gradient4
+  max-width: 80px
+  height: 20px
+  background: rgb(0,0,70)
+  background: -webkit-linear-gradient(left, rgba(0,0,70,1) 0%, rgba(28,181,224,1) 100%)
+  background: -o-linear-gradient(left, rgba(0,0,70,1) 0%, rgba(28,181,224,1) 100%)
+  background: linear-gradient(to right, rgba(0,0,70,1) 0%, rgba(28,181,224,1) 100%)
+  margin: 0 auto
+
+
+.gradient5
+  max-width: 80px
+  height: 20px
+  background: rgb(15,52,67)
+  background: -webkit-linear-gradient(left, rgba(15,52,67,1) 0%, rgba(52,232,158,1) 100%)
+  background: -o-linear-gradient(left, rgba(15,52,67,1) 0%, rgba(52,232,158,1) 100%)
+  background: linear-gradient(to right, rgba(15,52,67,1) 0%, rgba(52,232,158,1) 100%)
+  margin: 0 auto
+
+
+.gradient6
+  max-width: 80px
+  height: 20px
+  background: rgb(60,16,83)
+  background: -webkit-linear-gradient(left, rgba(60,16,83,1) 0%, rgba(173,83,137,1) 100%)
+  background: -o-linear-gradient(left, rgba(60,16,83,1) 0%, rgba(173,83,137,1) 100%)
+  background: linear-gradient(to right, rgba(60,16,83,1) 0%, rgba(173,83,137,1) 100%)
+  margin: 0 auto
+
+
+.inactiveGradient
+  width: 100%
+  height: 100%
+  background-color: rgba(255,255,255,.75)
+  cursor: pointer
+  transition: opacity .3s ease-in-out
+
+
+.inactiveGradient:hover
+  opacity: 0
+
+  
+@keyframes slideInFromBottom 
+  0% 
+    transform: translateY(110px)
+    color: white
+  
+  
+  66% 
+    transform: translateY(110px)
+    color: white
+  
+
+  100% 
+    transform: translatey(66px)
+    color: black
+  
 @import "~bulma"
-
 
 // responsiveness
 +tablet-only
