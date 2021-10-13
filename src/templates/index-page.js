@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 
-import HeaderName from '../components/HeaderName'
+import HomepageHeader from '../components/HomepageHeader'
 
 export const IndexPageTemplate = ({
   image,
@@ -18,60 +18,7 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <div className="headerContainer" id="headerContainer">
-      <h1 className="headerName">Salazar</h1>
-      <HeaderName></HeaderName>
-    </div>
-    <div className="columns">
-      <div className="column">
-        <div className="gradientContainer">
-          <div className="gradient1">
-            <div className="inactiveGradient gradientOverlay" id="gradient0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="column">
-        <div className="gradientContainer">
-          <div className="gradient2">
-            <div className="inactiveGradient gradientOverlay" id="gradient0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="column">
-        <div className="gradientContainer">
-          <div className="gradient3">
-            <div className="inactiveGradient gradientOverlay" id="gradient0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="column">
-        <div className="gradientContainer">
-          <div className="gradient4">
-            <div className="inactiveGradient gradientOverlay" id="gradient0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="column">
-        <div className="gradientContainer">
-          <div className="gradient5">
-            <div className="inactiveGradient gradientOverlay" id="gradient0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="column">
-        <div className="gradientContainer">
-          <div className="gradient6">
-            <div className="inactiveGradient gradientOverlay" id="gradient0">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <HomepageHeader></HomepageHeader>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -136,7 +83,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
+  
   return (
     <Layout>
       <IndexPageTemplate

@@ -1,9 +1,23 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Delaunator from "delaunator";
 import * as THREE from "three";
 
-class HeaderName extends Component {
-  componentDidMount(){    
+class HomepageHeader extends Component {
+  constructor(){
+    super();
+    this.state ={
+      selectedGradient: 0
+    }
+  }
+  
+  toggleSelectedGradient(clickedGradient){
+    this.setState({
+      selectedGradient: clickedGradient
+    })
+    this.init(clickedGradient);
+  }
+   
+  componentDidMount(){
     let camera,
       scene,
       renderer;
@@ -13,14 +27,15 @@ class HeaderName extends Component {
       x: 0,
       y: 0
     };
+    
+    var selectedGradient;
+    
     const mouseLight = new THREE.PointLight(0xcccccc, 1, 300);
     var mouseLightHeight = 20;
     
-    console.log("hi");
-    
     var headerContainer = document.getElementById("headerContainer");
     
-    function init(clickedGradient) {
+    this.init = (clickedGradient) => {
       var headerCanvas = document.getElementById("headerCanvas");
       if(headerCanvas != null){
         headerCanvas.remove();
@@ -82,14 +97,12 @@ class HeaderName extends Component {
       // Create a set of  gradients for the fill
       var gradients = [[73,50,64, 255, 0, 153], [51, 51, 51, 221, 24, 24], [75,19,79,201,75,75], [0,0,70,28,181,224], [15,52,67,52,232,158], [60,16,83,173,83,137]];
       
-      var selectedGradient;
       if(clickedGradient !== undefined){
         selectedGradient = clickedGradient;
       }
       else{
         selectedGradient = Math.floor(Math.random() * gradients.length);
       }
-      console.log(selectedGradient);
       grd.addColorStop(.25, "rgb(" + gradients[selectedGradient][0] + "," + gradients[selectedGradient][1] + ", " + gradients[selectedGradient][2]);
       grd.addColorStop(.45, "rgb(" + gradients[selectedGradient][3] + "," + gradients[selectedGradient][4] + ", " + gradients[selectedGradient][5]);
       
@@ -98,9 +111,7 @@ class HeaderName extends Component {
       for (var i = 0; i < gradientElements.length; i++) {
         gradientElements[i].style.opacity = '1';
       }
-      document.getElementById("gradient" + selectedGradient).style.opacity = "0";
       
-    
       // Render gradient across whole fill covering canvas
       ctx.fillStyle = grd;
       ctx.fillRect(0, 0, width, height);
@@ -281,12 +292,67 @@ class HeaderName extends Component {
       renderer.render(scene, camera);
     
     }
-    init();
+    this.init();
+    console.log("selectedGradient " + selectedGradient)
+    this.setState({
+      selectedGradient: selectedGradient
+    })
+    console.log(this.state);
   }
+  
   render() {
+    console.log(this.state.selectedGradient);
     return (
-      <div />
+      <> 
+        <div className = "headerContainer" id = "headerContainer" >
+          <h1 className="headerName">Salazar</h1>
+        </div>
+        <div className="columns">
+          <div className="column">
+            <div className="gradientContainer">
+              <div className="pointer gradient1" onClick={() => this.toggleSelectedGradient(0)}>
+                <div className={"gradientOverlay" + (this.state.selectedGradient === 0 ? "" : " inactiveGradient")}></div>
+              </div>
+            </div>
+          </div>
+          <div className="column">
+            <div className="gradientContainer">
+              <div className="pointer gradient2" onClick={() => this.toggleSelectedGradient(1)}>
+                <div className={"gradientOverlay" + (this.state.selectedGradient === 1 ? "" : " inactiveGradient")}></div>
+              </div>
+            </div>
+          </div>
+          <div className="column">
+            <div className="gradientContainer">
+              <div className="pointer gradient3" onClick={() => this.toggleSelectedGradient(2)}>
+                <div className={"gradientOverlay" + (this.state.selectedGradient === 2 ? "" : " inactiveGradient")}></div>
+              </div>
+            </div>
+          </div>
+          <div className="column">
+            <div className="gradientContainer">
+              <div className="pointer gradient4" onClick={() => this.toggleSelectedGradient(3)}>
+                <div className={"gradientOverlay" + (this.state.selectedGradient === 3 ? "" : " inactiveGradient")}></div>
+              </div>
+            </div>
+          </div>
+          <div className="column">
+            <div className="gradientContainer">
+              <div className="pointer gradient5" onClick={() => this.toggleSelectedGradient(4)}>
+                <div className={"gradientOverlay" + (this.state.selectedGradient === 4 ? "" : " inactiveGradient")}></div>
+              </div>
+            </div>
+          </div>
+          <div className="column">
+            <div className="gradientContainer">
+              <div className="pointer gradient6" onClick={() => this.toggleSelectedGradient(5)}>
+                <div className={"gradientOverlay" + (this.state.selectedGradient === 5 ? "" : " inactiveGradient")}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
     )
   }
 }
-export default HeaderName;
+export default HomepageHeader;
