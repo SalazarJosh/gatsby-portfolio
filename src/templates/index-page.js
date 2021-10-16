@@ -19,6 +19,18 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <HomepageHeader></HomepageHeader>
+    <div className="spacer-lg"></div>
+    <div class="container">
+      <div className="divider"></div>
+      <div className="spacer-lg"></div>
+      <h2 className="homepage-h2">Latest from the Blog</h2>
+      <div className="container">
+        <div className="content">
+          <BlogRoll />
+        </div>
+      </div>
+    </div>
+
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -53,7 +65,6 @@ export const IndexPageTemplate = ({
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
                   </h3>
-                  <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/blog">
                       Read more

@@ -351,6 +351,18 @@ class HomepageHeader extends Component {
             </div>
           </div>
         </div>
+        <div className="spacer-md"></div>
+        <div className="columns">
+          <div class="column work">
+            <p>Accessibility</p>
+          </div>
+          <div class="column work">
+            <p>Development</p>
+          </div>
+          <div class="column work">
+            <p>Design</p>
+          </div>
+        </div>
       </>
     )
   }
