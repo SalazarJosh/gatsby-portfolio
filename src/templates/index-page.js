@@ -5,6 +5,7 @@ import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 import HomepageHeader from '../components/HomepageHeader'
 
@@ -28,7 +29,47 @@ export const IndexPageTemplate = ({
     <div className="content">
       <BlogRoll/>
     </div>
+    <div className="spacer-sm"></div>
+    <div className="full-width-blog-container">
+      <div
+        className="full-width-image-container margin-top-0"
+        style={{
+          backgroundImage: `url(${
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`,
+        }}
+      >
+        <h2
+          className="has-text-weight-bold is-size-1"
+          style={{
+            boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
+            backgroundColor: '#f40',
+            color: 'white',
+            padding: '1rem',
+          }}
+        >
+          View all posts
+        </h2>
+      </div>
+    </div>
+    <div className="spacer-md"></div>
+    <h2 className="homepage-h2">Places I've Worked</h2>
+    <div className="columns">
+      <div className="column">
+        <h3>UofM</h3>
+        <p>As the Web Designer and Administrator at the University of Michigan's College of Literature, Science, and the Arts I worked with the team to bring the presence of the college into a digital space.</p>
+      </div>
+      <div className="column">
+        <h3>Teaching</h3>
+        <p>I spent many nights and weekends in the classroom working with students to further their understand of all things web and digital design.</p>
+      </div>
+      <div className="column">
+        <h3>Central</h3>
+        <p>Early on in my career I had the opportunity to work on Central Michigan University's digital applications as a UI/UX Designer and Developer.</p>
+      </div>
+    </div>
   </div>
+  <div className="footer-spacer"></div>
 
   {/* <section className="section section--gradient">
     <div className="container">

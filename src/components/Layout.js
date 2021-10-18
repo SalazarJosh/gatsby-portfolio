@@ -8,7 +8,7 @@ import {withPrefix} from 'gatsby'
 
 const TemplateWrapper = ({children}) => {
   const {title, description} = useSiteMetadata()
-  return (<div>
+  return (<div className="footer-spacing">
     <Helmet>
       <html lang="en"/>
       <title>{title}</title>
@@ -32,7 +32,7 @@ const TemplateWrapper = ({children}) => {
       <script src="../public/scripts/header-name.js" type="text/javascript"></script>
     </Helmet>
     <Navbar/>
-    <div>{children}</div>
+    <div className="site-wrapper">{children}</div>
     <Footer/>
   </div>)
 }

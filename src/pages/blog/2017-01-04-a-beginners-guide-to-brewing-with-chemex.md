@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Recreating GitHub's Globe
 date: 2021-07-01
 featuredpost: false
-featuredimage: /img/chemex.jpg
+featuredimage: /img/github-globe.png
 description: Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time.
 tags:
   - brewing

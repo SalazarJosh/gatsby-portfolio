@@ -4,6 +4,7 @@
 @import "./homepage-header"
 @import "./homepage"
 @import "./blog-roll"
+@import "./footer"
 
 @font-face 
   font-family: 'Amiri'
@@ -65,6 +66,9 @@ $header-hover-transition: color .3s linear
     padding: 0 2rem 1rem 0
     margin-bottom: 1.5rem
     margin-top: 0
+
+.footer-spacing
+  padding-bottom: 50rem
 
 // Helper Classes
 .full-width-image-container
@@ -130,9 +134,11 @@ $header-hover-transition: color .3s linear
 
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
-footer.footer
-  padding: 3rem 0rem 0rem
-  background-color: transparent
+  
+.site-wrapper
+  background-color: #fff
+  position: relative
+  z-index: 2
 
 //Menu overrides
 $menu-item-color: $white-ter
@@ -171,6 +177,10 @@ $menu-label-color: $white-ter
 .blog-list-item .featured-thumbnail
   flex-basis: 35%
   margin: 0 1.5em 0 0
+  
+.full-width-blog-container
+  position: relative
+  cursor: pointer
 
   
 @keyframes slideInFromBottom 

@@ -22,7 +22,7 @@ class BlogRoll extends React.Component {
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                       }}
                     />
                   </Link>
@@ -56,6 +56,7 @@ class BlogRoll extends React.Component {
               >
                 {post.frontmatter.title}
               </Link>
+              <div className="spacer-sm"></div>
             </div>
 
             /*<div className="is-parent column">
