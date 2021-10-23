@@ -14,6 +14,46 @@ body
   font-family: 'Amiri', serif
   color: #000
 
+//career icon styles
+.st0
+  fill: #f2f2f2
+
+.st1
+  fill: desaturate(#FFCB05, 100%)
+  transition: fill .3s ease
+
+.st2
+  fill: desaturate(#FFC82E, 100%)
+  transition: fill .3s ease
+
+.st3
+  fill: desaturate(#6A0032, 100%)
+  transition: fill .3s ease
+
+.st4
+  fill: desaturate(#FFC82E, 100%)
+  transition: fill .3s ease
+  
+.worked-places-container
+  width: 35%
+  margin: 0 auto
+
+.worked-places-container:hover .st1
+  fill: #FFCB05
+  
+.worked-places-container:hover .st2
+  fill: #FFC82E
+
+.worked-places-container:hover .st3
+  fill: #6A0032
+  
+.worked-places-container:hover .st4
+  fill: var(--brandColor)
+
+.career-title
+ font-family: 'Oswald', sans-serif
+ color: #787878
+
 // Config vars
 // Kaldi logo brand color: #FD461E
 $kaldi-red: #D64000
@@ -25,18 +65,14 @@ $body-color: #333
 $black: #000
 $header-hover-transition: color .3s linear
 
-/* width */
-::-webkit-scrollbar 
+body::-webkit-scrollbar 
   width: 10px
-
-/* Track */
-::-webkit-scrollbar-track 
-  background: #f1f1f1
-
-/* Handle */
-::-webkit-scrollbar-thumb 
-  background: #f00
-
+ 
+body::-webkit-scrollbar-track 
+  background-color: #EBEBEB
+ 
+body::-webkit-scrollbar-thumb 
+  background-color: var(--brandColor)
 
 ::root
   --brandColor: #fff
@@ -156,8 +192,6 @@ $menu-label-color: $white-ter
 .menu-list
   list-style: none !important
   text-align: left
-.social
-  padding: 2em
 .social a
     padding: .5em .5em .3em .5em
     border-radius: 1em
@@ -181,6 +215,27 @@ $menu-label-color: $white-ter
 .full-width-blog-container
   position: relative
   cursor: pointer
+  
+.view-all-posts-container
+  display: flex
+  align-items: center
+  justify-content: center;  
+.view-all-posts
+  font-size: 2.5rem
+  font-family: 'Amiri', serif
+  overflow: hidden
+  background: linear-gradient(to right, var(--brandColor), var(--brandColor) 50%, black 50%)
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-size: 200% 100%
+  background-position: 100%
+  transition: background-position 275ms ease
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  cursor: pointer
+  
+.view-all-posts:hover
+  background-position: 0 -100%
 
   
 @keyframes slideInFromBottom 

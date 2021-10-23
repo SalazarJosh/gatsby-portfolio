@@ -107,6 +107,7 @@ class HomepageHeader extends Component {
       grd.addColorStop(.45, "rgb(" + gradients[selectedGradient][3] + "," + gradients[selectedGradient][4] + ", " + gradients[selectedGradient][5]);
       
       document.documentElement.style.setProperty("--brandColor", "rgba(" + gradients[selectedGradient][3] + "," + gradients[selectedGradient][4] + ", " + gradients[selectedGradient][5] + ", 1)");
+      
       var gradientElements = document.getElementsByClassName("gradientOverlay");
       for (var i = 0; i < gradientElements.length; i++) {
         gradientElements[i].style.opacity = '1';
@@ -307,7 +308,7 @@ class HomepageHeader extends Component {
         <div className = "headerContainer" id = "headerContainer" >
           <h1 className="headerName">Salazar</h1>
         </div>
-        <div className="columns">
+        <div className="columns is-mobile">
           <div className="column">
             <div className="gradientContainer">
               <div className="pointer gradient1" onClick={() => this.toggleSelectedGradient(0)}>
