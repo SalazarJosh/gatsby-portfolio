@@ -50,8 +50,10 @@ export const IndexPageTemplate = ({
             h18.79v12.77h-4.85v19.89h4.85v12.77H62.09V63.95h5.17V51.02L54.17,68.8z"/>
           </svg>
         </div>
+        <div className="spacer-sm"></div>
         <h3 className="career-title">University of Michigan</h3>
-        <p>As the Web Designer and Administrator at the University of Michigan's College of Literature, Science, and the Arts I worked with the team to bring the presence of the college into a digital space.</p>
+        <div className="spacer-xs"></div>
+        <p className="career-desc">I currently work with the University of Michigan's College of Literature, Science, and the Arts to bring the presence of the college into a digital space.</p>
       </div>
       <div className="column">
         <div className="worked-places-container">
@@ -73,9 +75,12 @@ export const IndexPageTemplate = ({
             <polygon class="st2" points="65.81,47.57 65.18,48.97 82.84,48.97 87.95,38.17 87.02,37.48 82.21,47.57 	"/>
           </svg>
         </div>
+        <div className="spacer-sm"></div>
         <h3 className="career-title">Central Michigan University</h3>
         <div className="spacer-xs"></div>
-        <p>I spent many nights and weekends in the classroom working with students to further their understand of all things web and digital design.</p>
+        <p className="career-desc">I spent many nights and weekends in the classroom working with students to further their understand of all things web and digital design.</p>
+        <div className="spacer-xs"></div>
+        <p className="career-desc">Early on in my career I had the opportunity to work on Central Michigan University's digital applications as a UI/UX Designer and Developer.</p>
       </div>
       <div className="column">
         <div className="worked-places-container">
@@ -96,8 +101,10 @@ export const IndexPageTemplate = ({
             C55.53,42.92,55.51,42.64,55.33,42.45z"/>
           </svg>
         </div>
+        <div className="spacer-sm"></div>
         <h3 className="career-title">Speaking</h3>
-        <p>Early on in my career I had the opportunity to work on Central Michigan University's digital applications as a UI/UX Designer and Developer.</p>
+        <div className="spacer-xs"></div>
+        <p className="career-desc">Exploration and experimentation is what I do. I enjoy presenting my work and findings at conferences around the U.S. <a href="#">Check out the Talks page to learn more.</a></p>
       </div>
     </div>
   </div>

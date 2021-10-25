@@ -9,11 +9,37 @@
 @font-face 
   font-family: 'Amiri'
   src: url("https://fonts.googleapis.com/css2?family=Amiri&display=swap")
+  
+@font-face 
+  font-family: 'Cerebri'
+  src: url("../../fonts/Cerebri/CerebriSans-Regular.woff")
+  font-weight: normal
+  font-style: normal
+  
+@font-face 
+  font-family: 'Cerebri'
+  src: url("../../fonts/Cerebri/CerebriSans-Bold.woff")
+  font-weight: bold
+  font-style: normal
+  
+@mixin Cerebri-Sans-Book
+  font-family: 'Cerebri', sans-serif
+  letter-spacing: -0.4px
 
 body
   font-family: 'Amiri', serif
   color: #000
+  line-height: 1.625
 
+.amiri-font
+  font-family: 'Amiri', serif
+
+.career-desc
+  @include Cerebri-Sans-Book
+  letter-spacing: -0.4px
+  color: #666
+  font-size: 1.125rem
+  
 //career icon styles
 .st0
   fill: #f2f2f2
@@ -51,9 +77,12 @@ body
   fill: var(--brandColor)
 
 .career-title
- font-family: 'Oswald', sans-serif
+ font-family: 'Amiri', serif
  color: #787878
-
+ font-size: 2rem
+ text-align: center
+ color: #000
+    
 // Config vars
 // Kaldi logo brand color: #FD461E
 $kaldi-red: #D64000
@@ -150,8 +179,9 @@ body::-webkit-scrollbar-thumb
   margin-top: 0 !important
 
 .navbar-item
+  @include Cerebri-Sans-Book
+    
   text-transform: uppercase
-  font-family: 'Oswald', sans-serif
   font-size: 1rem
   font-weight: 700
   transition: $header-hover-transition
@@ -222,7 +252,7 @@ $menu-label-color: $white-ter
   justify-content: center;  
 .view-all-posts
   font-size: 2.5rem
-  font-family: 'Amiri', serif
+  font-family: 'Cerebri', serif
   overflow: hidden
   background: linear-gradient(to right, var(--brandColor), var(--brandColor) 50%, black 50%)
   background-clip: text
