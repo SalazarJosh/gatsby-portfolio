@@ -9,26 +9,34 @@ const SocialIcons = class extends React.Component {
   render() {
     return (
       <>
-        <a className="navbar-item" href="https://twitter.com/josalaza" target="_blank" rel="noopener noreferrer">
-          <span className="icon">
-            <FontAwesomeIcon icon={faTwitter}/>
-          </span>
-        </a>
-        <a className="navbar-item" href="https://www.linkedin.com/in/joshuasalazar1/" target="_blank" rel="noopener noreferrer">
-          <span className="icon">
-            <FontAwesomeIcon icon={faLinkedin}/>
-          </span>
-        </a>
-        <a className="navbar-item" href="https://codepen.io/joshsalazar" target="_blank" rel="noopener noreferrer">
-          <span className="icon">
-            <FontAwesomeIcon icon={faCodepen}/>
-          </span>
-        </a>
-        <a className="navbar-item" href="https://github.com/SalazarJosh" target="_blank" rel="noopener noreferrer">
-          <span className="icon">
-            <FontAwesomeIcon icon={faGithub}/>
-          </span>
-        </a>
+        <div className="navbar-item socialIconFooter">
+          <a href="https://twitter.com/josalaza" target="_blank" rel="noopener noreferrer">
+            <span className="icon">
+              <FontAwesomeIcon icon={faTwitter}/>
+            </span>
+          </a>
+        </div>
+        <div className="navbar-item socialIconFooter">
+          <a href="https://www.linkedin.com/in/joshuasalazar1/" target="_blank" rel="noopener noreferrer">
+            <span className="icon">
+              <FontAwesomeIcon icon={faLinkedin}/>
+            </span>
+          </a>
+        </div>
+        <div className="navbar-item socialIconFooter">
+          <a href="https://codepen.io/joshsalazar" target="_blank" rel="noopener noreferrer">
+            <span className="icon">
+              <FontAwesomeIcon icon={faCodepen}/>
+            </span>
+          </a>
+        </div>
+        <div className="navbar-item socialIconFooter">
+          <a href="https://github.com/SalazarJosh" target="_blank" rel="noopener noreferrer">
+            <span className="icon">
+              <FontAwesomeIcon icon={faGithub}/>
+            </span>
+          </a>
+        </div>
       </>
     )
   }

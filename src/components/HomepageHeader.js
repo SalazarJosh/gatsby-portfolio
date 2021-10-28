@@ -294,15 +294,12 @@ class HomepageHeader extends Component {
     
     }
     this.init();
-    console.log("selectedGradient " + selectedGradient)
     this.setState({
       selectedGradient: selectedGradient
     })
-    console.log(this.state);
   }
   
   render() {
-    console.log(this.state.selectedGradient);
     return (
       <> 
         <div className = "headerContainer" id = "headerContainer" >
@@ -379,13 +376,13 @@ class HomepageHeader extends Component {
         </div>
         <div className="spacer-md"></div>
         <div className="columns">
-          <div class="column work">
+          <div className="column work">
             <p>Accessibility</p>
           </div>
-          <div class="column work">
+          <div className="column work">
             <p>Development</p>
           </div>
-          <div class="column work">
+          <div className="column work">
             <p>Design</p>
           </div>
         </div>

@@ -7994,6 +7994,11 @@
     "section-matter" "^1.0.0"
     "strip-bom-string" "^1.0.0"
 
+"gsap@^3.8.0":
+  "integrity" "sha512-cvpzKkWFePDZCycwXwJnDSpTR3j+a4QLQF/t0c+pXqzRESgAYx5hieaoshzZFjbwsARqr0+5c3GKE7wI273w/g=="
+  "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.8.0.tgz"
+  "version" "3.8.0"
+
 "gud@^1.0.0":
   "integrity" "sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw=="
   "resolved" "https://registry.npmjs.org/gud/-/gud-1.0.0.tgz"

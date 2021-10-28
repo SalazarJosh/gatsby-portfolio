@@ -31,6 +31,17 @@ body
   color: #000
   line-height: 1.625
 
+
+
+a
+  text-decoration: underline
+  color: #0099ff
+  transition: color .3s ease-in-out
+  
+a:hover
+  color: var(--brandColor)
+  
+
 .amiri-font
   font-family: 'Amiri', serif
 
@@ -105,6 +116,8 @@ body::-webkit-scrollbar-thumb
 
 ::root
   --brandColor: #fff
+  
+$brand-color: var(--brandColor)
 
 .divider
   height: 1px
@@ -117,6 +130,13 @@ body::-webkit-scrollbar-thumb
   box-shadow:none !important
   min-height: 8rem
 
+.page-header
+  @include Cerebri-Sans-Book
+  
+  font-size: 5rem
+  line-height: 1.1
+  font-weight: 800
+  
 .content .taglist
   list-style: none
   margin-bottom: 0
@@ -132,8 +152,8 @@ body::-webkit-scrollbar-thumb
     margin-bottom: 1.5rem
     margin-top: 0
 
-.footer-spacing
-  padding-bottom: 50rem
+.footer
+  padding: 6rem 1.5rem
 
 // Helper Classes
 .full-width-image-container
@@ -178,6 +198,12 @@ body::-webkit-scrollbar-thumb
 .margin-top-0
   margin-top: 0 !important
 
+pre
+  background-color: #eee
+
+code
+  background-color: #eee
+
 .navbar-item
   @include Cerebri-Sans-Book
     
@@ -186,17 +212,19 @@ body::-webkit-scrollbar-thumb
   font-weight: 700
   transition: $header-hover-transition
   color: $black !important
+  text-decoration: none
 
 .navbar-item:hover
   color: var(--brandColor) !important
 
-
 .navbar-item .icon
   color: $black
   transition: $header-hover-transition
+  transition: transform .2s ease-in-out
 
 .navbar-item .icon:hover
   color: var(--brandColor)
+  transform: translate(0,-2px)
 
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
@@ -205,6 +233,9 @@ body::-webkit-scrollbar-thumb
   background-color: #fff
   position: relative
   z-index: 2
+
+.footer-social-icons .socialIconFooter
+  display: inline-block
 
 //Menu overrides
 $menu-item-color: $white-ter
@@ -222,16 +253,7 @@ $menu-label-color: $white-ter
 .menu-list
   list-style: none !important
   text-align: left
-.social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
-
+    
 // blog roll
 .blog-list-item.is-featured
   background-color: #d6400033

@@ -8,7 +8,7 @@ import {withPrefix} from 'gatsby'
 
 const TemplateWrapper = ({children}) => {
   const {title, description} = useSiteMetadata()
-  return (<div className="footer-spacing">
+  return (<div className="footer-spacing" id="footer-spacing">
     <Helmet>
       <html lang="en"/>
       <title>{title}</title>
@@ -29,7 +29,6 @@ const TemplateWrapper = ({children}) => {
       <script src="https://unpkg.com/delaunator@3.0.2/delaunator.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-      <script src="../public/scripts/header-name.js" type="text/javascript"></script>
     </Helmet>
     <Navbar/>
     <div className="site-wrapper">{children}</div>

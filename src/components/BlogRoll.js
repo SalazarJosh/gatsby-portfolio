@@ -21,41 +21,42 @@ class BlogRoll extends React.Component {
                   >
                     <PreviewCompatibleImage
                       imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                          image: post.frontmatter.featuredimage,
+                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                       }}
                     />
                   </Link>
                 </div>
+
+                <div className="spacer-sm"></div>
+
+                <div className="tagText">
+                  {post.frontmatter.tags.map((tag, index, array) => {
+                    if (array.length - 1 === index) {
+                      return(
+                        <span key={tag + `tag`}>
+                          {tag}
+                        </span>
+                      )
+                    } else {
+                      return(
+                        <span key={tag + `tag`}>
+                          {tag}, &nbsp;
+                        </span>
+                      )
+                    }
+                  })}
+                </div>
+
+
+                <Link
+                  className="blogTitle"
+                  to={post.fields.slug}
+                >
+                  {post.frontmatter.title}
+                </Link>
               </div>
 
-              <div className="spacer-sm"></div>
-
-              <div className="tagText">
-                {post.frontmatter.tags.map((tag, index, array) => {
-                  if (array.length - 1 === index) {
-                    return(
-                      <span key={tag + `tag`}>
-                        {tag}
-                      </span>
-                    )
-                  } else {
-                    return(
-                      <span key={tag + `tag`}>
-                        {tag}, &nbsp;
-                      </span>
-                    )
-                  }
-                })}
-              </div>
-
-
-              <Link
-                className="blogTitle"
-                to={post.fields.slug}
-              >
-                {post.frontmatter.title}
-              </Link>
               <div className="spacer-sm"></div>
             </div>
 

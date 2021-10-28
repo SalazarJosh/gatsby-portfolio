@@ -2,19 +2,12 @@
   font-family: 'Cerebri', sans-serif
   letter-spacing: -0.4px
   
-.portItem
-  background-color: #f00
-  
-.portItem:hover .blogThumbnailWrapper img
+.port-item:hover img
     transform: scale(1.05)
 
 .blogThumbnailWrapper
   position: relative
   overflow: hidden
-
-.blogThumbnailWrapper img
-  transition: transform .5s ease-in-out
-  object-fit: cover
   
 .tagText
   @include Cerebri-Sans-Book
@@ -39,6 +32,5 @@
   color: var(--brandColor)
   text-decoration: underline
   
-.blogImage
-  
-  
+.port-item img
+  transition: transform .5s ease-in-out !important
