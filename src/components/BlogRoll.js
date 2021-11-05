@@ -12,7 +12,7 @@ class BlogRoll extends React.Component {
       <div className="columns">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="column" key={post.id}>
+            <div className="column gs_reveal" key={post.id}>
               <div className="port-item">
                 <div className="blogThumnailWrapper">
                   <Link

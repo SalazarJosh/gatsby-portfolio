@@ -18,6 +18,8 @@ class HomepageHeader extends Component {
   }
    
   componentDidMount(){
+    var activeAnimation;
+    activeAnimation != null && cancelAnimationFrame( activeAnimation );
     let camera,
       scene,
       renderer;
@@ -280,7 +282,7 @@ class HomepageHeader extends Component {
     
     function animate() {
     
-      requestAnimationFrame(animate);
+      activeAnimation = requestAnimationFrame(animate);
     
       render();
     
@@ -302,7 +304,7 @@ class HomepageHeader extends Component {
   render() {
     return (
       <> 
-        <div className = "headerContainer" id = "headerContainer" >
+        <div className = "headerContainer gs_reveal" id = "headerContainer" >
           <div className="headerName">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 42.49 10" xmlSpace="preserve">
@@ -330,7 +332,7 @@ class HomepageHeader extends Component {
             </svg>
           </div>
         </div>
-        <div className="columns is-mobile">
+        <div className="columns is-mobile gs_reveal">
           <div className="column">
             <div className="gradientContainer">
               <div className="pointer gradient1" onClick={() => this.toggleSelectedGradient(0)}>
@@ -376,13 +378,13 @@ class HomepageHeader extends Component {
         </div>
         <div className="spacer-md"></div>
         <div className="columns">
-          <div className="column work">
+          <div className="column work gs_reveal">
             <p>Accessibility</p>
           </div>
-          <div className="column work">
+          <div className="column work gs_reveal">
             <p>Development</p>
           </div>
-          <div className="column work">
+          <div className="column work gs_reveal">
             <p>Design</p>
           </div>
         </div>

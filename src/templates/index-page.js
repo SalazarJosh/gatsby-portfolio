@@ -27,12 +27,12 @@ export const IndexPageTemplate = ({
     <div className="divider"></div>
     <div className="spacer-lg"></div>
     <section className="section">
-      <GSAPComponent className="homepage-h2" wrapperElement="h2" direction="down" delay={2}>
+      <GSAPComponent className="homepage-h2 gs_reveal" direction="up" wrapperElement="h2" delay={2}>
         Latest From the Blog
       </GSAPComponent>
       <div className="spacer-sm"></div>
       <div className="content">
-        <BlogRoll/>
+        <BlogRoll />
       </div>
       <div className="spacer-sm"></div>
       <div className="view-all-posts-container gs_reveal">
@@ -48,7 +48,7 @@ export const IndexPageTemplate = ({
       <h2 className="homepage-h2 gs_reveal">Shaping My Career</h2>
       <div className="spacer-sm"></div>
       <div className="columns">
-        <div className="column">
+        <div className="column gs_reveal">
           <div className="worked-places-container">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 108 108" xmlSpace="preserve">
@@ -62,7 +62,7 @@ export const IndexPageTemplate = ({
           <div className="spacer-xs"></div>
           <p className="career-desc">I currently work with the University of Michigan's College of Literature, Science, and the Arts to bring the presence of the college into a digital space.</p>
         </div>
-        <div className="column">
+        <div className="column gs_reveal">
           <div className="worked-places-container">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 108 108" xmlSpace="preserve">
@@ -89,7 +89,7 @@ export const IndexPageTemplate = ({
           <div className="spacer-xs"></div>
           <p className="career-desc">Early on in my career I had the opportunity to work on Central Michigan University's digital applications as a UI/UX Designer and Developer.</p>
         </div>
-        <div className="column">
+        <div className="column gs_reveal">
           <div className="worked-places-container">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 108 108" xmlSpace="preserve">
@@ -115,54 +115,24 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-  </div>
-
-  {/* <section className="section section--gradient">
-    <div className="container">
-      <div className="section">
-    <div className="columns">
-    <div className="column is-10 is-offset-1">
-    <div className="content">
-    <div className="content">
-    <div className="tile">
-    <h1 className="title">{mainpitch.title}</h1>
-    </div>
-    <div className="tile">
-    <h3 className="subtitle">{mainpitch.description}</h3>
-    </div>
-    </div>
-    <div className="columns">
-    <div className="column is-12">
-    <h3 className="has-text-weight-semibold is-size-2">
-    {heading}
-    </h3>
-    <p>{description}</p>
-    </div>
-    </div>
-    <Features gridItems={intro.blurbs}/>
-    <div className="columns">
-    <div className="column is-12 has-text-centered">
-    <Link className="btn" to="/products">
-    See all products
-    </Link>
-    </div>
-    </div>
-    <div className="column is-12">
-    <h3 className="has-text-weight-semibold is-size-2">
-    Latest stories
-    </h3>
-    <div className="column is-12 has-text-centered">
-    <Link className="btn" to="/blog">
-    Read more
-    </Link>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+    <div className="spacer-lg"></div>
+    <section className="section">
+      <div className="columns">
+        <div className="column">
+        </div>
+        <div className="column is-one-fifth">
+          <PreviewCompatibleImage
+            imageInfo={{
+                image: '/img/low-poly-self-final.png',
+                alt: `low poly self portrait`,
+            }}
+          />
+        </div>
+        <div className="column">
+        </div>
       </div>
-    </div>
-  </section> */}
+    </section>
+  </div>
 </div>)
 
 IndexPageTemplate.propTypes = {
