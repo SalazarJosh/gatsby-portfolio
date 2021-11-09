@@ -6,11 +6,9 @@ featuredpost: false
 featuredimage: /img/github-globe.png
 description: Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time.
 tags:
-  - brewing
-  - chemex
+  - JavaScript
+  - Dev blog
 ---
-![chemex](/img/chemex.jpg)
-
 **Hey there!** Just so you know, I am not affiliated with GitHub. This was a fun project that I created after reading GitHub's blog post series on their home page redesign.
 
 Earlier this year GitHub launched their new homepage design

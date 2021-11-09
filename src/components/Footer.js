@@ -44,17 +44,13 @@ const Footer = class extends React.Component {
         <div className="container">
           <div style={{
               maxWidth: '100vw'
-            }} className="columns">
+          }} className="columns">
             <div className="column is-4">
               <p className="has-text-centered-mobile">
                 Made with&nbsp;
-                <FontAwesomeIcon icon={faHeart}/>, &nbsp;
+                <FontAwesomeIcon icon={faReact}/>, &nbsp;
                 <FontAwesomeIcon icon={faCoffee}/>, and XXX &nbsp;
                 <FontAwesomeIcon icon={faGithub}/>&nbsp; commits
-              </p>
-              <p className="has-text-centered-mobile">
-                Powered by&nbsp;
-                <FontAwesomeIcon icon={faReact}/>
               </p>
             </div>
             <div className="column is-4 has-text-centered">

@@ -12,33 +12,38 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  date,
   helmet,
-}) => {
+}) => {  
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <section className="section blogPage">
       {helmet || ''}
+      <div className="spacer-md"></div>
       <div className="container content">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+          <div className="column is-8 is-offset-2">
+            <h1 className="title blog-title is-size-2 has-text-weight-bold has-text-centered">
               {title}
             </h1>
-            <p>{description}</p>
+            <div className="has-text-centered">
+              <ul className="blog-taglist">
+                {tags.map((tag) => (
+                  <li key={tag + `tag`}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul>
+              <span className="blog-date">{date}</span>
+            </div>
+            <div className="spacer-md"></div>
+            <p className="blog-description">{description}</p>
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column is-8 is-offset-2">
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
@@ -51,6 +56,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  date: PropTypes.string,
   helmet: PropTypes.object,
 }
 
@@ -74,6 +80,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        date={post.frontmatter.date}
       />
     </Layout>
   )

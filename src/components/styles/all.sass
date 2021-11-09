@@ -5,6 +5,7 @@
 @import "./homepage"
 @import "./blog-roll"
 @import "./footer"
+@import "./blog-post"
 
 @font-face 
   font-family: 'Amiri'
@@ -31,8 +32,18 @@ body
   color: #000
   line-height: 1.625
 
+body::-webkit-scrollbar 
+  width: 10px
+ 
+body::-webkit-scrollbar-track 
+  background-color: #EBEBEB
+ 
+body::-webkit-scrollbar-thumb 
+  background-color: var(--brandColor)
 
-
+::root
+  --brandColor: rgba(221,24, 24, 1)
+  
 a
   text-decoration: underline
   color: #0099ff
@@ -71,6 +82,28 @@ a:hover
   fill: desaturate(#FFC82E, 100%)
   transition: fill .3s ease
   
+//low poly self portrait svg styles
+.lp0
+  fill: #D6C7B7
+.lp1
+  fill: #775339
+.lp2
+  fill: #D49476
+.lp3
+  fill: #1A1912
+.lp4
+  fill: #D19081
+.lp5 
+  fill: #5E3B1F
+.lp6 
+  fill: #766B5F
+.lp7
+    fill: #191911
+.lp8
+  fill: #A9734A
+.lp9
+  fill: #946052
+  
 .worked-places-container
   width: 35%
   margin: 0 auto
@@ -105,19 +138,7 @@ $body-color: #333
 $black: #000
 $header-hover-transition: color .3s linear
 
-body::-webkit-scrollbar 
-  width: 10px
- 
-body::-webkit-scrollbar-track 
-  background-color: #EBEBEB
- 
-body::-webkit-scrollbar-thumb 
-  background-color: var(--brandColor)
 
-::root
-  --brandColor: #fff
-  
-$brand-color: var(--brandColor)
 
 .divider
   height: 1px
@@ -253,7 +274,15 @@ $menu-label-color: $white-ter
 .menu-list
   list-style: none !important
   text-align: left
-    
+
+.low-poly-self-container
+  position: relative
+
+.low-poly-self-svg
+  position: absolute
+  left: 0
+  top: 0
+
 // blog roll
 .blog-list-item.is-featured
   background-color: #d6400033

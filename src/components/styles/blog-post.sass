@@ -1,0 +1,43 @@
+@mixin Cerebri-Sans-Book
+  font-family: 'Cerebri', sans-serif
+  letter-spacing: -0.4px
+
+.blogPage
+  @include Cerebri-Sans-Book
+    
+.blog-title
+  color: #000 !important
+  font-size: 3.75rem !important
+  
+.blog-taglist
+  list-style: none
+  display: inline
+  font-size: .875rem
+
+  li
+    display: inline
+    padding-right: 1rem
+    text-transform: uppercase
+    font-weight: bold
+  
+    a
+      color: #000
+      text-decoration: none
+      
+      &:hover
+        color: var(--brandColor) !important
+    
+.blog-date
+  text-transform: uppercase
+  font-size: .875rem
+  
+  &:before
+    content: "|"
+    padding-right: 1rem
+    
+.blog-tag-date-container
+  text-align: center
+  
+.blog-description
+  font-size: 1.3rem
+  font-weight: 700

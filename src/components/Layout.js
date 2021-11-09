@@ -7,6 +7,11 @@ import useSiteMetadata from './SiteMetadata'
 import {withPrefix} from 'gatsby'
 
 const TemplateWrapper = ({children}) => {
+  var brandColorVariableExists = getComputedStyle(document.documentElement).getPropertyValue("--brandColor"); // #999999
+  if(!brandColorVariableExists){
+    document.documentElement.style.setProperty("--brandColor", "rgba(221,24, 24, 1)")
+  }
+  
   const {title, description} = useSiteMetadata()
   return (<div className="footer-spacing" id="footer-spacing">
     <Helmet>

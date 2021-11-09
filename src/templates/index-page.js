@@ -115,18 +115,34 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-    <div className="spacer-lg"></div>
+    <div className="spacer-md"></div>
     <section className="section">
       <div className="columns">
         <div className="column">
         </div>
-        <div className="column is-one-fifth">
+        <div className="column is-one-fifth gs_reveal low-poly-self-container">
           <PreviewCompatibleImage
             imageInfo={{
                 image: '/img/low-poly-self-final.png',
                 alt: `low poly self portrait`,
             }}
           />
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 246.95 340.14" className="low-poly-self-svg" xmlSpace="preserve">
+            <polygon class="lp0" points="68.56,304.6 54.94,291.8 68.72,268.16 "/>
+            <polygon class="lp1" points="0.74,136.6 11.85,138.46 0,155.38 "/>
+            <polygon class="lp2" points="21.64,169.12 15.11,178.37 9.76,169.5 "/>
+            <polygon class="lp3" points="64.55,19.43 49.55,19.43 53.77,13.1 "/>
+            <polygon class="lp4" points="206.34,333.66 233.93,329.77 238.18,308.66 "/>
+            <polygon class="lp1" points="56.1,315.91 47.4,305.04 47.5,319.62 "/>
+            <polygon class="lp5" points="7.69,132.12 16,128.24 9.25,127.75 "/>
+            <polygon class="lp6" points="235.53,252.57 241.1,239.88 227.3,230.44 "/>
+            <polygon class="lp3" points="18.25,75.13 21.59,95.63 31.13,80.26 "/>
+            <polygon class="lp7" points="16.96,8.5 37.5,25.32 38.02,0 "/>
+            <polygon class="lp8" points="246.95,119.95 224.16,113.72 235.95,134.06 "/>
+            <polygon class="lp9" points="79.06,340.14 59.54,340.06 76.36,325.84 "/>
+          </svg>
+
         </div>
         <div className="column">
         </div>
