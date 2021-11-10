@@ -7,7 +7,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
 
   if (!!image && !!image.childImageSharp) {
     return (
-      <Img className="blogImage" fluid={image.childImageSharp.fluid} alt={alt} />
+      <Img className="blog-header-image" fluid={image.childImageSharp.fluid} alt={alt} />
     )
   }
 

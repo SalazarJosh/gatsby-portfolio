@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import Img from 'gatsby-image'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const BlogPostTemplate = ({
   content,
@@ -40,17 +40,37 @@ export const BlogPostTemplate = ({
               <span className="blog-date">{date}</span>
             </div>
             <div className="spacer-md"></div>
-            <p className="blog-description">{description}</p>
           </div>
         </div>
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <Img className="blog-header-image" fluid={image.childImageSharp.fluid} alt={alt} />
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: featuredimage,
+                alt: `low poly self portrait`,
+              }}
+            />
           </div>
         </div>
         <div className="columns">
           <div className="column is-8 is-offset-2">
+            <div className="spacer-sm"></div>
+            <p className="blog-description">{description}</p>
             <PostContent content={content} />
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column is-8 is-offset-2">
+            SHARE ON
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column is-8 is-offset-2">
+            <div className="spacer-md"></div>
+            UP next
+            TEST
+            <div className="spacer-md"></div>
+
           </div>
         </div>
       </div>
@@ -65,6 +85,7 @@ BlogPostTemplate.propTypes = {
   title: PropTypes.string,
   date: PropTypes.string,
   helmet: PropTypes.object,
+  featuredimage: PropTypes.string
 }
 
 const BlogPost = ({ data }) => {
@@ -112,6 +133,13 @@ export const pageQuery = graphql`
         title
         description
         tags
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

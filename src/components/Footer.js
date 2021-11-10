@@ -48,8 +48,8 @@ const Footer = class extends React.Component {
             <div className="column is-4">
               <p className="has-text-centered-mobile">
                 Made with&nbsp;
-                <FontAwesomeIcon icon={faReact}/>, &nbsp;
-                <FontAwesomeIcon icon={faCoffee}/>, and XXX &nbsp;
+                <FontAwesomeIcon icon={faCoffee}/>, &nbsp;
+                <FontAwesomeIcon icon={faReact}/>, and XXX &nbsp;
                 <FontAwesomeIcon icon={faGithub}/>&nbsp; commits
               </p>
             </div>
