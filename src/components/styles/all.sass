@@ -151,6 +151,65 @@ $header-hover-transition: color .3s linear
   box-shadow:none !important
   min-height: 8rem
 
+.nameSVGContainer
+  justify-content: space-around
+  flex: auto
+  display: flex
+  align-items: center
+
+.nameSVG 
+  display: block
+  margin: 0 auto
+  width: 120px
+  cursor: pointer
+  height: 40px
+  
+.nameSVG:hover .logoRedA
+  transform: translate(0px, 0px)
+
+.nameSVG:hover .logoBlueA 
+  transform: translate(0px, 0px)
+
+.nameSVG:hover .nameSLZR
+  transition: opacity .5s .25s ease
+  opacity: 1
+
+.nameSLZR
+  opacity: 0
+  transition: opacity 0.5s 0 ease
+
+.logoRedA
+  transform: translate(7px, 0px)
+  transition: transform .5s ease
+
+.logoBlueA 
+  transform: translate(-7.5px, 0px)
+  transition: transform .5s ease
+  
+.logost0
+  fill: none
+  stroke: #000
+  stroke-miterlimit: 10
+  stroke-width: 0.2px
+
+.logost1
+  fill: #f00
+
+.logost2
+  fill: #0f0
+
+.logost3
+  fill: #00f
+
+.logost4
+  fill: none
+  stroke: #000
+  stroke-miterlimit: 10
+  stroke-width: 0.2px
+  
+.logost5
+  fill: #000
+
 .page-header
   @include Cerebri-Sans-Book
   
@@ -219,12 +278,10 @@ $header-hover-transition: color .3s linear
 .margin-top-0
   margin-top: 0 !important
 
-pre
-  background-color: #eee
-
 code
   background-color: #eee
-
+  padding: 0
+  
 .navbar-item
   @include Cerebri-Sans-Book
     

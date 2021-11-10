@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import Img from 'gatsby-image'
 
 export const BlogPostTemplate = ({
   content,
@@ -14,6 +15,7 @@ export const BlogPostTemplate = ({
   title,
   date,
   helmet,
+  featuredimage
 }) => {  
   const PostContent = contentComponent || Content
 
@@ -39,6 +41,11 @@ export const BlogPostTemplate = ({
             </div>
             <div className="spacer-md"></div>
             <p className="blog-description">{description}</p>
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <Img className="blog-header-image" fluid={image.childImageSharp.fluid} alt={alt} />
           </div>
         </div>
         <div className="columns">
@@ -80,6 +87,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        featuredimage={post.frontmatter.featuredimage}
         date={post.frontmatter.date}
       />
     </Layout>
