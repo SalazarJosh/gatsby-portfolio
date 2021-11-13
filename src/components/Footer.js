@@ -1,13 +1,9 @@
 import React from 'react'
-import {Link} from 'gatsby'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faHeart} from '@fortawesome/free-solid-svg-icons'
 import {faCoffee} from '@fortawesome/free-solid-svg-icons'
 import {faGithub} from '@fortawesome/free-brands-svg-icons'
 import {faReact} from '@fortawesome/free-brands-svg-icons'
-
-import logo from '../img/logo.svg'
 
 import SocialIcons from './SocialIcons'
 
@@ -27,11 +23,10 @@ const Footer = class extends React.Component {
 
     var footerHeight;
 
-    if (footer && footer != undefined) {
+    if (footer && footer !== undefined) {
       footerHeight = footer.offsetHeight;
     }
-    if (footerSpacingDiv && footerSpacingDiv != undefined) {
-      console.log(footerHeight);
+    if (footerSpacingDiv && footerSpacingDiv !== undefined) {
       footerHeight += 12
       footerSpacingDiv.style.paddingBottom = footerHeight + "px";
     }

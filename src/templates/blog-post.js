@@ -7,8 +7,6 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-import { Location } from '@reach/router'
-
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTwitterSquare} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
@@ -82,7 +80,7 @@ export const BlogPostTemplate = ({
                 </a>
               </div>
               <div className="share-icon share-icon-linkedin">
-                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=google.com" + thisLocation + "&title=Check out this post from Joshua Salazar - " + title} target="blank">
+                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=" + thisLocation + "&title=Check out this post from Joshua Salazar - " + title} target="blank">
                   <FontAwesomeIcon icon={faLinkedin}/>
                 </a>
               </div>
@@ -103,6 +101,9 @@ export const BlogPostTemplate = ({
 
           </div>
         </div> */}
+      </div>
+      <div className="is-hidden">
+        <div className="widealign"></div>
       </div>
     </section>
   )
