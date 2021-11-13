@@ -3,17 +3,17 @@ templateKey: blog-post
 title: 'Three.js Low-poly Mesh Generator'
 date: 2021-07-02
 featuredpost: false
-featuredimage: /img/flavor_wheel.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
+featuredimage: /img/low-poly-mesh-feature.png
+description: Follow along to see how I created the "Salazar" low-poly mesh on my homepage.
 tags:
-  - flavor
-  - tasting
+  - JavaScript
+  - Dev Blog
 ---
-![flavor wheel](/img/flavor_wheel.jpg)
+If it's not obvious, the general theme of my homepage and website is that of a low-poly aesthetic. Long before I started in web I actually spent a lot of time in 3D modeling and game design. The low-poly aesthetic of the homepage is an homage to those times. Though I still dabble with 3D and game design, my main focus has shifted to web. I believe that early experience in 3D design made picking up Three.js a bit easier.
 
-The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
+I made this low-poly mesh generator at a time where I was also exploring new forms of generative art. The final product here will not have static color gradients like my homepage, but dynamic color bands with multiple variables that create truly unique results each time to create a mesh.
 
-While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
+## Setting the scene
 
 ## What the updates mean to you
 

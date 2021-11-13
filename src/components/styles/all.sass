@@ -6,6 +6,8 @@
 @import "./blog-roll"
 @import "./footer"
 @import "./blog-post"
+@import "./share-social"
+@import "./talks-page"
 
 @font-face 
   font-family: 'Amiri'
@@ -51,7 +53,6 @@ a
   
 a:hover
   color: var(--brandColor)
-  
 
 .amiri-font
   font-family: 'Amiri', serif
@@ -138,8 +139,6 @@ $body-color: #333
 $black: #000
 $header-hover-transition: color .3s linear
 
-
-
 .divider
   height: 1px
   background-color: $black
@@ -150,6 +149,32 @@ $header-hover-transition: color .3s linear
 .navbar .navbar-menu
   box-shadow:none !important
   min-height: 8rem
+
+.navbar-bottom-border
+  box-sizing: content-box
+  -moz-box-sizing: content-box
+  -webkit-box-sizing: content-box
+  border-bottom: 2px solid #000
+
+.navbar-start .navbar-item:first-child
+  // padding: 0.5rem 0.75rem .5rem 0
+
+.navbar-start .active
+  color: var(--brandColor) !important
+  position: relative
+  
+.navbar-start .active::after
+  position: absolute
+  bottom: 2rem
+  left: calc(50% - 2.5px)
+  width: 6px
+  height: 5px
+  content: ''
+  -webkit-transition: opacity 0.5s 0 ease
+  transition: opacity 0.5s 0 ease
+  opacity: 1
+  border-radius: 50%
+  background-color: var(--brandColor)
 
 .nameSVGContainer
   justify-content: space-around
@@ -374,7 +399,6 @@ $menu-label-color: $white-ter
   
 .view-all-posts:hover
   background-position: 0 -100%
-
   
 @keyframes slideInFromBottom 
   0% 

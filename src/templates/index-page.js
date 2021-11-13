@@ -142,7 +142,6 @@ export const IndexPageTemplate = ({
             <polygon class="lp8" points="246.95,119.95 224.16,113.72 235.95,134.06 "/>
             <polygon class="lp9" points="79.06,340.14 59.54,340.06 76.36,325.84 "/>
           </svg>
-
         </div>
         <div className="column">
         </div>

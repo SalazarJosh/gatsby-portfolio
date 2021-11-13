@@ -7,7 +7,7 @@ featuredimage: /img/github-globe.png
 description: Three.js is pretty cool. GitHub took it to the next level with their homepage design. In this post I share how I recreated the GitHub globe with WebGL.
 tags:
   - JavaScript
-  - Dev blog
+  - Dev Blog
 ---
 **Hey there!** Just so you know, I am not affiliated with GitHub. This was a fun project that I created after reading GitHub's blog post series on their home page redesign.
 
@@ -22,7 +22,7 @@ To start, I needed to setup the scene. I won't share the details of how I did th
 
 The initial globe layer and lighting was the first challenge in capturing the essence of the globe. I spent a lot of time moving the lights around and changing the values until I was happy with the results. I ended up with three lights in the scene. A light-blue key light to illuminate most of the globe, a lighter blue light for the highlighted upper-left edge, and a purple light for the right side of the globe.
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>//SETUP lights
 var light1 = new THREE.PointLight(0x5a54ff, 0.75);
 light1.position.set(-150, 150, -50);
@@ -37,17 +37,19 @@ scene.add(light1, light2, light3);</code></pre>
 
 And here are the results ...
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="GitHub Globe 2" src="https://codepen.io/joshsalazar/embed/mdMwWPP?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<div class="spacer-sm"></div>
+<iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe 2" src="https://codepen.io/joshsalazar/embed/mdMwWPP?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/joshsalazar/pen/mdMwWPP">
   GitHub Globe 2</a> by Joshua Salazar (<a href="https://codepen.io/joshsalazar">@joshsalazar</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+<div class="spacer-sm"></div>
 
 ### Atmosphere
 The atmosphere was probably the hardest part to recreate. On their post they mentioned they used a slightly offset sphere with a custom shader to get the atmospheric effect. I've never created a custom shader in three.js so it took some time to figure that out and get it looking right.
 
 #### Atmosphere shader
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>const atmosphereShader = {
   'atmosphere': {
     uniforms: {},
@@ -71,13 +73,15 @@ The atmosphere was probably the hardest part to recreate. On their post they men
 #### Atmosphere mesh
 Then I added the shader to a ShaderMaterial and applied that to a slightly offset and slightly larger SphereGeometry.
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.2" src="https://codepen.io/joshsalazar/embed/mdMKQoV?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<div class="spacer-sm"></div>
+<iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.2" src="https://codepen.io/joshsalazar/embed/mdMKQoV?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/joshsalazar/pen/mdMKQoV">
   GitHub Globe Pt.2</a> by Joshua Salazar (<a href="https://codepen.io/joshsalazar">@joshsalazar</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+<div class="spacer-sm"></div>
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>const sphereGeometry = new THREE.SphereGeometry(2, 64, 64);
 const sphereMaterial = new THREE.MeshLambertMaterial({
   color: 0xeeeeee
@@ -93,7 +97,7 @@ In their blogpost, GitHub talks about how they dynamically render the regions of
 
 I took a shortcut here and found [a texture](https://i.imgur.com/JLFp6Ws.png) to overlay the base sphere. In short, I create another sphere and load the texture as a material onto it. I make that sphere slightly larger than the base globe sphere, enable transparency on the material, then add it to the scene
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>//setup map overlay
 const loader = new THREE.TextureLoader();
 const overlayMaterial = new THREE.MeshBasicMaterial({
@@ -109,7 +113,7 @@ scene.add(overlaySphere);</code></pre>
 
 GitHub's globe uses the blue spires to represent geographical locations of pull requests. As stated before, my goal was just to capture the visual essence of the globe.
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>const cylinderGeometry = new THREE.CylinderGeometry(.01, .01, 4.25, 32);
 const cylinderMaterial = new THREE.MeshBasicMaterial({
   color: 0x00ddff,
@@ -120,11 +124,13 @@ const cylinderMaterial = new THREE.MeshBasicMaterial({
 
 I used CylinderGeometry for the spires with a slightly transparent blue MeshBasicMaterial. I then added several cylinders to the scene. I started by moving them randomly around the globe then nudged their position slightly. Instead of trying to figure out the tangential point for each surface point of the globe, I made each spire sit in the middle of the globe and extended it so it stuck out of both sides. As such, some spires sit in the ocean.
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.3" src="https://codepen.io/joshsalazar/embed/yLoqXbM?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<div class="spacer-sm"></div>
+<iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.3" src="https://codepen.io/joshsalazar/embed/yLoqXbM?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/joshsalazar/pen/yLoqXbM">
   GitHub Globe Pt.3</a> by Joshua Salazar (<a href="https://codepen.io/joshsalazar">@joshsalazar</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+<div class="spacer-sm"></div>
 
 ### Pink arcs
 The pink arcs were an important part of the GitHub globe. [GitHub shared some details of how they created and animated these arcs](https://github.blog/2020-12-21-how-we-built-the-github-globe/#visualizing-pull-requests). I used that as reference to create static animated arcs. 
@@ -137,7 +143,7 @@ Using the [QuadraticBezierCurve3](https://threejs.org/docs/?q=quadratic#api/en/e
 
 Here's the setup for that along with the creation and rendering of one of the tubes.
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>//set up bezier curves
 var numPoints = 100;
 var start = new THREE.Vector3(0, 1.5, 1.3);
@@ -156,18 +162,20 @@ scene.add(curveMesh1);</code></pre>
 
 And the result.
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.4" src="https://codepen.io/joshsalazar/embed/eYEjRQM?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<div class="spacer-sm"></div>
+<iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.4" src="https://codepen.io/joshsalazar/embed/eYEjRQM?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/joshsalazar/pen/eYEjRQM">
   GitHub Globe Pt.4</a> by Joshua Salazar (<a href="https://codepen.io/joshsalazar">@joshsalazar</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+<div class="spacer-sm"></div>
 
 ### Final touches and animation
 For the final touches I wanted to animate the arcs, spin the globe, and allow the user to drag the globe. These little interactions and animations go a long way in capturing the essence of the globe.
 
 Spinning the globe was pretty simple. As part of the animate() loop, I simply rotated the sphere by .0005 units along the y-axis.
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>sphere.rotation.y += 0.0005;</code></pre>
 
 You may have noticed I used the sphere.add method instead of the scene.add method for each of the objects. This applies each object as a child of the base sphere so the location and rotation value is automatically applied to those objects as the base sphere rotates.
@@ -175,7 +183,7 @@ You may have noticed I used the sphere.add method instead of the scene.add metho
 Finally, to get the drag to work, I wrote a small script to listen to mouse events. 
 
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>var isDragging = false;
 var previousMousePosition = {
   x: 0,
@@ -211,17 +219,19 @@ $("#canvas").mouseout(function() {
 
 Then in the animate function I wrap the sphere.rotation line from above to check if the isDragging boolean is true to stop the globe from spinning if the user is dragging it.
 
-<pre style="background-color: #eee; padding: 15px;">
+<pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>if (!isDragging) {
   sphere.rotation.y += 0.0005;
 }</code></pre>
 
 Here are the final results. [Check it out, in full, on CodePen](https://codepen.io/joshsalazar/full/dyzRpEO).
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="GitHub Globe" src="https://codepen.io/joshsalazar/embed/dyzRpEO?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<div class="spacer-sm"></div>
+<iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe" src="https://codepen.io/joshsalazar/embed/dyzRpEO?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/joshsalazar/pen/dyzRpEO">
   GitHub Globe</a> by Joshua Salazar (<a href="https://codepen.io/joshsalazar">@joshsalazar</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+<div class="spacer-sm"></div>
 
 Please be sure to check out GitHub's [five-part series](https://github.blog/2021-02-11-how-we-designed-and-wrote-the-narrative-for-our-homepage/) on their [homepage](https://github.com/home) design. There's a lot to read there and I hope you find the motivation and inspiration it gave me to make and learn something new.

@@ -7,6 +7,12 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faTwitterSquare} from '@fortawesome/free-brands-svg-icons'
+import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
+
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -61,18 +67,36 @@ export const BlogPostTemplate = ({
         </div>
         <div className="columns">
           <div className="column is-8 is-offset-2">
-            SHARE ON
+            <div className="spacer-sm"></div>
+            <p className="share-on">SHARE ON</p>
+            <div className="share-icon-container">
+              <div className="share-icon share-icon-twitter">
+                <a href={"https://twitter.com/share?text=Check out this post from Joshua Salazar - " + title + "&url=" + window.location.href} target="blank">
+                  <FontAwesomeIcon icon={faTwitterSquare}/>
+                </a>
+              </div>
+              <div className="share-icon share-icon-linkedin">
+                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=google.com" + window.location.href + "&title=Check out this post from Joshua Salazar - " + title} target="blank">
+                  <FontAwesomeIcon icon={faLinkedin}/>
+                </a>
+              </div>
+              <div className="share-icon share-icon-facebook">
+                <a href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href + "&t=Check out this post from Joshua Salazar - " + title} target="blank">
+                  <FontAwesomeIcon icon={faFacebookSquare}/>
+                </a>
+              </div>
+            </div>
+            <div className="spacer-sm"></div>
           </div>
         </div>
-        <div className="columns">
+        {/* <div className="columns">
           <div className="column is-8 is-offset-2">
-            <div className="spacer-md"></div>
             UP next
             TEST
             <div className="spacer-md"></div>
 
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

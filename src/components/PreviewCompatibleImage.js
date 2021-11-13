@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
-  const { alt = '', childImageSharp, image } = imageInfo
+  const { alt = '', childImageSharp, image, className = '' } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -16,7 +16,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
   }
 
   if (!!image && typeof image === 'string')
-    return <img src={image} alt={alt} />
+    return <img src={image} alt={alt} className={className} />
 
   return null
 }
