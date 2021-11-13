@@ -7,6 +7,8 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
+import { Location } from '@reach/router'
+
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTwitterSquare} from '@fortawesome/free-brands-svg-icons'
 import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
@@ -24,7 +26,11 @@ export const BlogPostTemplate = ({
   featuredimage
 }) => {  
   const PostContent = contentComponent || Content
-
+  const isBrowser = typeof window !== `undefined`
+  var thisLocation = '';
+  if(isBrowser){
+    thisLocation = window.location.href;
+  }
   return (
     <section className="section blogPage">
       {helmet || ''}
@@ -71,17 +77,17 @@ export const BlogPostTemplate = ({
             <p className="share-on">SHARE ON</p>
             <div className="share-icon-container">
               <div className="share-icon share-icon-twitter">
-                <a href={"https://twitter.com/share?text=Check out this post from Joshua Salazar - " + title + "&url=" + window.location.href} target="blank">
+                <a href={"https://twitter.com/share?text=Check out this post from Joshua Salazar - " + title + "&url=" + thisLocation} target="blank">
                   <FontAwesomeIcon icon={faTwitterSquare}/>
                 </a>
               </div>
               <div className="share-icon share-icon-linkedin">
-                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=google.com" + window.location.href + "&title=Check out this post from Joshua Salazar - " + title} target="blank">
+                <a href={"https://www.linkedin.com/shareArticle?mini=true&url=google.com" + thisLocation + "&title=Check out this post from Joshua Salazar - " + title} target="blank">
                   <FontAwesomeIcon icon={faLinkedin}/>
                 </a>
               </div>
               <div className="share-icon share-icon-facebook">
-                <a href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href + "&t=Check out this post from Joshua Salazar - " + title} target="blank">
+                <a href={"https://www.facebook.com/sharer/sharer.php?u=" + thisLocation + "&t=Check out this post from Joshua Salazar - " + title} target="blank">
                   <FontAwesomeIcon icon={faFacebookSquare}/>
                 </a>
               </div>
