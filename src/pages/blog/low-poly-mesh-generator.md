@@ -276,6 +276,8 @@ Finally, I added some shininess to the material of the base mesh. The material i
 
 And there we have it! Our final scene is done!
 
+**Press down on the left mouse button to make the light grow**
+
 <div class="spacer-sm"></div>
 <iframe height="600" style="width: 100%;" scrolling="no" title="Low-Poly Generator" src="https://codepen.io/joshsalazar/embed/eYEPgyB?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/joshsalazar/pen/eYEPgyB">

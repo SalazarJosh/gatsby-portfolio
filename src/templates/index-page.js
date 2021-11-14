@@ -36,7 +36,9 @@ export const IndexPageTemplate = ({
       <div className="spacer-sm"></div>
       <div className="view-all-posts-container gs_reveal">
         <div className="has-text-centered view-all-posts">
-          View All Posts
+          <Link to="/blog">
+            View All Posts
+          </Link>
         </div>
       </div>
     </section>
