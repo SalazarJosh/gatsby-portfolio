@@ -34,20 +34,21 @@ const Navbar = class extends React.Component {
     })
     return (
       <>
-        <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-          <div className="container">
-            <div className="navbar-brand">
-              {/* Hamburger menu */}
-              <div className={`navbar-burger burger ${this.state.navBarActiveClass}`} data-target="navMenu" role="menuitem" tabIndex={0} onKeyPress={() => this.toggleHamburger()} onClick={() => this.toggleHamburger()}>
-                <span/>
-                <span/>
-                <span/>
-              </div>
-            </div>
-            <Location>
-              {({location}) => {
-                const locationPath = location.pathname
-                return <div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass} ${locationPath === '/' ? null : `navbar-bottom-border`}`}>
+        <Location>
+          {({location}) => {
+            const locationPath = location.pathname
+            return <nav className={`navbar is-transparent ${locationPath === '/' ? null : `is-fixed-top`}`} role="navigation" aria-label="main-navigation">
+              <div className={`container ${locationPath === '/' ? null : `navbar-bottom-border`}`}>
+                <div className="navbar-brand">
+                  {/* Hamburger menu */}
+                  <div className={`navbar-burger burger ${this.state.navBarActiveClass}`} data-target="navMenu" role="menuitem" tabIndex={0} onKeyPress={() => this.toggleHamburger()} onClick={() => this.toggleHamburger()}>
+                    <span/>
+                    <span/>
+                    <span/>
+                  </div>
+                </div>
+
+                <div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass}`}>
                   <div className="navbar-start has-text-centered">
                     <Link className="navbar-item" to="/" activeClassName="active">
                       Home
@@ -59,7 +60,7 @@ const Navbar = class extends React.Component {
                       Talks
                     </Link>
                   </div>
-                  {location.pathname !== '/' && <div className="nameSVGContainer">
+                  {location.pathname !== '/' && <div className="nameSVGContainer is-hidden-touch">
                     <Link className="navbar-item" to="/">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-1 0 40.44 9.91" xmlSpace="preserve" className="nameSVG">
                         <g className="nameSLZR">
@@ -96,15 +97,16 @@ const Navbar = class extends React.Component {
                   </div>
                   }
 
-                  <div className="navbar-end has-text-centered">
+                  <div className="navbar-end has-text-centered nav-social-icons">
                     <SocialIcons></SocialIcons>
                   </div>
                 </div>
-              }}
-            </Location>
 
-          </div>
-        </nav>
+
+              </div>
+            </nav>
+          }}
+        </Location>
       </>
       )
   }

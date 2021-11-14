@@ -34,13 +34,13 @@ body
   color: #000
   line-height: 1.625
 
-body::-webkit-scrollbar 
+html::-webkit-scrollbar 
   width: 10px
  
-body::-webkit-scrollbar-track 
+html::-webkit-scrollbar-track 
   background-color: #EBEBEB
  
-body::-webkit-scrollbar-thumb 
+html::-webkit-scrollbar-thumb 
   background-color: var(--brandColor)
 
 ::root
@@ -148,7 +148,7 @@ $header-hover-transition: color .3s linear
 
 .navbar .navbar-menu
   box-shadow:none !important
-  min-height: 8rem
+  min-height: 6rem
 
 .navbar-bottom-border
   box-sizing: content-box
@@ -175,6 +175,10 @@ $header-hover-transition: color .3s linear
   opacity: 1
   border-radius: 50%
   background-color: var(--brandColor)
+  
+@media screen and (max-width: 1024px)
+  .navbar-start .active::after
+      bottom: 0
 
 .nameSVGContainer
   justify-content: space-around
@@ -311,6 +315,7 @@ $header-hover-transition: color .3s linear
 code
   background-color: #eee
   padding: 0
+  white-space : pre-wrap !important
   
 .navbar-item
   @include Cerebri-Sans-Book
@@ -321,7 +326,7 @@ code
   transition: $header-hover-transition
   color: $black !important
   text-decoration: none
-
+  
 .navbar-item:hover
   color: var(--brandColor) !important
 
@@ -337,13 +342,24 @@ code
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
   
+.nav-social-icons
+  display: flex
+  justify-content: center
+  align-items: center
+  
 .site-wrapper
   background-color: #fff
   position: relative
   z-index: 2
+  padding-top: 100px
 
 .footer-social-icons .socialIconFooter
   display: inline-block
+  
+.more-posts-text
+  font-size: 2rem
+  font-family: 'Cerebri'
+  text-align: center
 
 //Menu overrides
 $menu-item-color: $white-ter

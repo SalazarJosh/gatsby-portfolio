@@ -377,15 +377,17 @@ class HomepageHeader extends Component {
           </div>
         </div>
         <div className="spacer-md"></div>
-        <div className="columns">
-          <div className="column work gs_reveal">
-            <p>Accessibility</p>
-          </div>
-          <div className="column work gs_reveal">
-            <p>Development</p>
-          </div>
-          <div className="column work gs_reveal">
-            <p>Design</p>
+        <div class="container">
+          <div className="columns">
+            <div className="column work gs_reveal">
+              <p>Accessibility</p>
+            </div>
+            <div className="column work gs_reveal">
+              <p>Development</p>
+            </div>
+            <div className="column work gs_reveal">
+              <p>Design</p>
+            </div>
           </div>
         </div>
       </>
