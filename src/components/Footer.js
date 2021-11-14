@@ -27,7 +27,6 @@ const Footer = class extends React.Component {
       footerHeight = footer.offsetHeight;
     }
     if (footerSpacingDiv && footerSpacingDiv !== undefined) {
-      footerHeight += 12
       footerSpacingDiv.style.paddingBottom = footerHeight + "px";
     }
 

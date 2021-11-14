@@ -11,7 +11,7 @@ const TemplateWrapper = ({children}) => {
   if(isBrowser){
     var brandColorVariableExists = getComputedStyle(document.documentElement).getPropertyValue("--brandColor"); // #999999
     if(!brandColorVariableExists){
-      document.documentElement.style.setProperty("--brandColor", "rgba(221,24, 24, 1)")
+      document.documentElement.style.setProperty("--brandColor", "rgba(201,75, 75, 1)")
     }
   }
   const {title, description} = useSiteMetadata()
