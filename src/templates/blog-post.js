@@ -18,6 +18,7 @@ export const BlogPostTemplate = ({
   contentComponent,
   description,
   tags,
+  listed,
   title,
   date,
   helmet,
@@ -52,6 +53,15 @@ export const BlogPostTemplate = ({
             <div className="spacer-md"></div>
           </div>
         </div>
+        {!listed &&
+          <div class="columns">
+            <div class="column">
+              <div className="unlisted-block">
+                <p>This blog is currently unlisted.</p>
+              </div>
+            </div>
+          </div>
+        }
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <PreviewCompatibleImage
@@ -128,7 +138,8 @@ BlogPostTemplate.propTypes = {
   title: PropTypes.string,
   date: PropTypes.string,
   helmet: PropTypes.object,
-  featuredimage: PropTypes.string
+  featuredimage: PropTypes.string,
+  listed: PropTypes.string
 }
 
 const BlogPost = ({ data }) => {
@@ -151,6 +162,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        listed={post.frontmatter.listed}
         featuredimage={post.frontmatter.featuredimage}
         date={post.frontmatter.date}
       />
@@ -176,6 +188,7 @@ export const pageQuery = graphql`
         title
         description
         tags
+        listed
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 100) {
