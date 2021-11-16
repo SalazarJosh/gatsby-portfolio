@@ -119,9 +119,8 @@ export const IndexPageTemplate = ({
     <div className="spacer-md"></div>
     <section className="">
       <div className="columns">
-        <div className="column">
-        </div>
-        <div className="column is-one-fifth gs_reveal low-poly-self-container">
+        <div class="column"></div>
+        <div className="column is-one-fifth is-one-third-mobile gs_reveal low-poly-self-container">
           <PreviewCompatibleImage
             imageInfo={{
                 image: '/img/low-poly-self-final.png',
@@ -149,7 +148,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
   </div>
-  <div class="background-poly-shape">
+  <div class="background-poly-shape is-hidden-touch">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 66.22 92.75" xmlSpace="preserve">
       <polygon class="st-background-0" points="25.94,20.42 5,29.58 27.33,45.64 "/>
@@ -165,7 +164,7 @@ export const IndexPageTemplate = ({
       <polygon class="st-background-10" points="30.29,0 61.78,6.75 48.89,33.4 "/>
     </svg>
   </div>
-  </div>)
+</div>)
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),

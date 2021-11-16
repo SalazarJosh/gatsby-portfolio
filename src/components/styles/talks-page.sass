@@ -2,6 +2,9 @@
   font-family: 'Cerebri', sans-serif
   letter-spacing: -0.4px
 
+@mixin Hello-Text
+  font-size: clamp(1rem, calc(-0.875rem + 8.333333vw), 3.5rem)
+
 .talks-page
   @include Cerebri-Sans-Book
     
@@ -38,6 +41,7 @@
   opacity: .6
   font-size: 3rem
   top: 5rem
+  @include Hello-Text
   
 .text-highlight
   color: var(--brandColor) !important
@@ -72,17 +76,19 @@
   margin: 0
   color: #fff
   opacity: .6
+  @include Hello-Text
 
 .hello-link
   text-decoration: none
 
 .content_container_list
   margin-top: 0
-  padding-left: 160px
+  padding-left: 120px
   text-align: left
   list-style: none
   white-space: nowrap
   color: white
+  @include Hello-Text
   
   -webkit-animation-name: change
   -webkit-animation-duration: 10s
