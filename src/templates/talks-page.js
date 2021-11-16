@@ -61,7 +61,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
               <div className="section">
                 <p>My most avid trait is navigating the nuances of midwestern goodbyes. I also love chatting about all things web. Please say hi and let's have a chat about typography, a big project you’re working on, or a cool new JavaScript library you’re playing with.</p>
 
-                <p className="text-highlight">I’m always interested in speaking opportunities so please feel free to reach out.</p>
+                <p className="text-highlight">I’m always interested in sharing what I'm learning on stage. Please feel free to reach out.</p>
               </div>
             </div>
           </div>
@@ -70,17 +70,18 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
       <div className="say-hello-background">
         <div class="container">
           <div class="columns">
-            <div class="column">
+            <div class="column is-8">
               <a href="mailto:joshuaasalazar@gmail.com" className="hello-link">
                 <div className="hello-content">
                   <div className="hello-container">
-                    <p className="hello-text"><FontAwesomeIcon icon={faExternalLinkSquareAlt}/> Say </p>
+                    <p className="hello-text">Say </p>
                     <ul class="content_container_list">
                       <li class="content_container_list_item">Hello !</li>
                       <li class="content_container_list_item">Asalaam alaikum !</li>
                       <li class="content_container_list_item">Hola !</li>
                       <li class="content_container_list_item">God dag !</li>
                     </ul>
+                    <p className="email-hello-text"><small>JoshuaASalazar@gmail.com <FontAwesomeIcon icon={faExternalLinkSquareAlt}/></small></p>
 
                   </div>
                 </div>

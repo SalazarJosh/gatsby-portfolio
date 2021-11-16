@@ -11,55 +11,59 @@ class BlogRoll extends React.Component {
     return (
       <div className="columns">
         {posts &&
-          posts.map(({ node: post }) => (
-            <div className="column gs_reveal" key={post.id}>
-              <div className="port-item">
-                <div className="blogThumnailWrapper">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                      }}
-                    />
-                  </Link>
+          posts.map(({ node: post }) => {
+            if (post.frontmatter.listed){
+              return(
+                <div className="column gs_reveal" key={post.id}>
+                  <div className="port-item">
+                    <div className="blogThumnailWrapper">
+                      <Link
+                        className="title has-text-primary is-size-4"
+                        to={post.fields.slug}
+                      >
+                        <PreviewCompatibleImage
+                          imageInfo={{
+                              image: post.frontmatter.featuredimage,
+                              alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                          }}
+                        />
+                      </Link>
+                    </div>
+
+                    <div className="spacer-sm"></div>
+
+                    <div className="tagText">
+                      {post.frontmatter.tags.map((tag, index, array) => {
+                        if (array.length - 1 === index) {
+                          return(
+                            <span key={tag + `tag`}>
+                              {tag}
+                            </span>
+                          )
+                        } else {
+                          return(
+                            <span key={tag + `tag`}>
+                              {tag}, &nbsp;
+                            </span>
+                          )
+                        }
+                      })}
+                    </div>
+
+
+                    <Link
+                      className="blogTitle"
+                      to={post.fields.slug}
+                    >
+                      {post.frontmatter.title}
+                    </Link>
+                  </div>
+
+                  <div className="spacer-sm"></div>
                 </div>
-
-                <div className="spacer-sm"></div>
-
-                <div className="tagText">
-                  {post.frontmatter.tags.map((tag, index, array) => {
-                    if (array.length - 1 === index) {
-                      return(
-                        <span key={tag + `tag`}>
-                          {tag}
-                        </span>
-                      )
-                    } else {
-                      return(
-                        <span key={tag + `tag`}>
-                          {tag}, &nbsp;
-                        </span>
-                      )
-                    }
-                  })}
-                </div>
-
-
-                <Link
-                  className="blogTitle"
-                  to={post.fields.slug}
-                >
-                  {post.frontmatter.title}
-                </Link>
-              </div>
-
-              <div className="spacer-sm"></div>
-            </div>
-          ))}
+              )
+            }
+          })}
       </div>
     )
   }
@@ -95,6 +99,7 @@ export default () => (
                 tags
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
+                listed
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 500, quality: 100) {

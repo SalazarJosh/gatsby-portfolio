@@ -3,6 +3,7 @@ templateKey: blog-post
 title: 'Three.js Low-Poly Mesh Generator'
 date: 2021-07-02
 featuredpost: false
+listed: true
 featuredimage: /img/low-poly-mesh-feature.png
 description: Follow along to see how I created the "Salazar" low-poly mesh on my homepage.
 tags:

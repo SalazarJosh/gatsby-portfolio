@@ -104,6 +104,18 @@ export const BlogPostTemplate = ({
       </div>
       <div className="is-hidden">
         <div className="widealign"></div>
+        <table class="table is-bordered">
+          <thead>
+            <tr>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
   )
