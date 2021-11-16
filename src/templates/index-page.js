@@ -164,6 +164,8 @@ export const IndexPageTemplate = ({
       <polygon class="st-background-10" points="30.29,0 61.78,6.75 48.89,33.4 "/>
     </svg>
   </div>
+  <div className="spacer-md"></div>
+  
 </div>)
 
 IndexPageTemplate.propTypes = {
