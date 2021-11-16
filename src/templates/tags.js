@@ -24,12 +24,14 @@ class TagRoute extends React.Component {
       <Layout>
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
-          <div className="container content">
+          <div className="container content tags-page">
             <div className="columns">
               <div
                 className="column is-10 is-offset-1"
                 style={{ marginBottom: '6rem' }}
               >
+                <div className="spacer-md"></div>
+
                 <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
                 <ul className="taglist">{postLinks}</ul>
                 <p>
