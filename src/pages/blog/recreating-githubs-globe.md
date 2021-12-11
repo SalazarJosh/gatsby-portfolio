@@ -5,23 +5,23 @@ date: 2021-07-01
 featuredpost: false
 listed: false
 featuredimage: /img/github-globe.png
-description: Three.js is pretty cool. GitHub took it to the next level with their homepage design. In this post I share how I recreated the GitHub globe with WebGL.
+description: GitHub took Three.js to the next level with their homepage design. In this post I share how I recreated the GitHub globe.
 tags:
   - JavaScript
   - Dev Blog
 ---
-**Hey there!** Just so you know, I am not affiliated with GitHub. This was a fun project that I created after reading GitHub's blog post series on their home page redesign.
+**Hey there!** I am not affiliated with GitHub. This was a fun project that I created from being inspired by reading [GitHub's blog post series on their homepage redesign](https://github.blog/2020-12-21-how-we-built-the-github-globe/).
 
 WebGL only draws points, lines, and triangles. Everything else is up to the developer. This is where Three.js comes in. It takes the basics of WebGL and creates a higher-level library for developers.
 
-I was experimenting with Three.js when I stumbled on GitHub's blog post series on their homepage redesign. I thought recreating the globe would be a fun and challenging project. They do share some details of how their globe was built. I did my best to fill in the blanks.
+I was experimenting with Three.js when I stumbled on [GitHub's blog post series on their homepage redesign](https://github.blog/2020-12-21-how-we-built-the-github-globe/). I thought recreating the globe would be a fun and challenging project. They do share some details of how their globe was built. I did my best to fill in the blanks.
 
-My globe doesn't have all the features as the GitHub globe. My goal was to capture the visual essence of the globe. At a later time, I may revisit this to attempt to incorporate the dynamic rendering and visualization of the pull requests. I also would like to review the performance optimizations from their blog post and optimize my globe.
+My globe doesn't have all the features as the GitHub globe. My goal was to capture the visual essence of the globe. At a later time I would like to review the performance optimizations from [their third blog post](https://github.blog/2021-01-29-making-githubs-new-homepage-fast-and-performant/) and optimize my globe.
 
 ### Scene setup
-To start, I needed to setup the scene. I won't share the details of how I did this given there's nothing unintuitive in my approach to scene setup. If you're new to Three.js, I'd recommend starting with the [creating a scene](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene) page in their docs.
+To start, I needed to setup the scene. I won't share the details of how I did this given there's nothing unintuitive in my approach to scene setup. If you're new to Three.js, I'd recommend starting with the [creating a scene](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene) page on their docs.
 
-The initial globe layer and lighting was the first challenge in capturing the essence of the globe. I spent a lot of time moving the lights around and changing the values until I was happy with the results. I ended up with three lights in the scene. A light-blue key light to illuminate most of the globe, a lighter blue light for the highlighted upper-left edge, and a purple light for the right side of the globe.
+The initial globe layer and lighting was the first challenge in capturing the essence of the globe. I spent a lot of time moving the lights around and changing the color and brightness values until I was happy with the results. I ended up with three lights in the scene: A light-blue key light to illuminate a majority of the globe, a lighter blue light for the highlighted upper-left edge, and a purple light for the right side of the globe.
 
 <pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>//SETUP lights
@@ -47,7 +47,7 @@ And here are the results ...
 <div class="spacer-sm"></div>
 
 ### Atmosphere
-The atmosphere was probably the hardest part to recreate. On their post they mentioned they used a slightly offset sphere with a custom shader to get the atmospheric effect. I've never created a custom shader in three.js so it took some time to figure that out and get it looking right.
+The atmosphere was probably the hardest part to recreate. On GitHub's post they mentioned using a slightly offset sphere with a custom shader to get the atmospheric effect. I've never created a custom shader in three.js so it took some time to figure that out and get it looking right.
 
 #### Atmosphere shader
 <pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
@@ -72,7 +72,7 @@ The atmosphere was probably the hardest part to recreate. On their post they men
 }</code></pre>
 
 #### Atmosphere mesh
-Then I added the shader to a ShaderMaterial and applied that to a slightly offset and slightly larger SphereGeometry.
+Then I added the shader to a [ShaderMaterial](https://threejs.org/docs/#api/en/materials/ShaderMaterial) and applied that to a slightly offset and slightly larger [SphereGeometry](https://threejs.org/docs/?q=sphere#api/en/geometries/SphereGeometry).
 
 <div class="spacer-sm"></div>
 <iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.2" src="https://codepen.io/joshsalazar/embed/mdMKQoV?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
@@ -94,9 +94,9 @@ scene.add(sphere);</code></pre>
 
 
 ### Land overlay and blue spires
-In their blogpost, GitHub talks about how they dynamically render the regions of Earth starting with the south pole and distributes circle meshes along the circumference of each latitude line.
+In their blogpost, GitHub shares how they render the regions of Earth starting with the south pole and distributing circle meshes along the circumference of each latitude line.
 
-I took a shortcut here and found [a texture](https://i.imgur.com/JLFp6Ws.png) to overlay the base sphere. In short, I create another sphere and load the texture as a material onto it. I make that sphere slightly larger than the base globe sphere, enable transparency on the material, then add it to the scene
+I took a shortcut here and found [a texture](https://i.imgur.com/JLFp6Ws.png) to overlay the base sphere. I created another sphere and loaded the texture as a material onto it. I make that sphere slightly larger than the base globe sphere, enable transparency on the material, then add it to the scene
 
 <pre style="background-color: #eee; padding: 15px; margin: 1.875rem 0;">
 <code>//setup map overlay
@@ -123,7 +123,7 @@ const cylinderMaterial = new THREE.MeshBasicMaterial({
 });</code></pre>
 
 
-I used CylinderGeometry for the spires with a slightly transparent blue MeshBasicMaterial. I then added several cylinders to the scene. I started by moving them randomly around the globe then nudged their position slightly. Instead of trying to figure out the tangential point for each surface point of the globe, I made each spire sit in the middle of the globe and extended it so it stuck out of both sides. As such, some spires sit in the ocean.
+I used [CylinderGeometry](https://threejs.org/docs/#api/en/geometries/CylinderGeometry) for the spires with a slightly transparent blue [MeshBasicMaterial](https://threejs.org/docs/?q=meshbas#api/en/materials/MeshBasicMaterial). I then added several cylinders to the scene. I started by moving them randomly around the globe then nudged their position slightly. Instead of trying to figure out the tangential point for each surface point of the globe, I made each spire sit in the middle of the globe and extended it so it stuck out of both sides of the globe. As such, some spires sit in the Indian Ocean.
 
 <div class="spacer-sm"></div>
 <iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe Pt.3" src="https://codepen.io/joshsalazar/embed/yLoqXbM?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
@@ -136,7 +136,7 @@ I used CylinderGeometry for the spires with a slightly transparent blue MeshBasi
 ### Pink arcs
 The pink arcs were an important part of the GitHub globe. [GitHub shared some details of how they created and animated these arcs](https://github.blog/2020-12-21-how-we-built-the-github-globe/#visualizing-pull-requests). I used that as reference to create static animated arcs. 
 
-For the animation of the arcs, the key from their blogpost was using the [setDrawRange()](https://threejs.org/docs/#api/en/core/BufferGeometry.setDrawRange) function on BufferGeometry. 
+For the animation of the arcs, the key from their blogpost was using the [setDrawRange()](https://threejs.org/docs/#api/en/core/BufferGeometry.setDrawRange) function on [BufferGeometry](https://threejs.org/docs/?q=bufferge#api/en/core/BufferGeometry). 
 
 Unlike GitHub's globe, I don't change the arc height depending on the distance between the two points. Like the blue spires, I created and animated a single arc then duplicated it several times and manually moved it around the globe.
 
@@ -228,7 +228,7 @@ Then in the animate function I wrap the sphere.rotation line from above to check
 Here are the final results. [Check it out, in full, on CodePen](https://codepen.io/joshsalazar/full/dyzRpEO).
 
 <div class="spacer-sm"></div>
-<iframe class="codepen-iframe" height="300" style="width: 100%;" scrolling="no" title="GitHub Globe" src="https://codepen.io/joshsalazar/embed/dyzRpEO?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe class="codepen-iframe" height="600" style="width: 100%;" scrolling="no" title="GitHub Globe" src="https://codepen.io/joshsalazar/embed/dyzRpEO?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/joshsalazar/pen/dyzRpEO">
   GitHub Globe</a> by Joshua Salazar (<a href="https://codepen.io/joshsalazar">@joshsalazar</a>)
   on <a href="https://codepen.io">CodePen</a>.
