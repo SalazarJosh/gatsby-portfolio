@@ -79,7 +79,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                       <li class="content_container_list_item">Hello !</li>
                       <li class="content_container_list_item">Asalaam alaikum !</li>
                       <li class="content_container_list_item">Hola !</li>
-                      <li class="content_container_list_item">God dag !</li>
+                      <li class="content_container_list_item">Hej !</li>
                     </ul>
                     <p className="email-hello-text"><small>JoshuaASalazar@gmail.com <FontAwesomeIcon icon={faExternalLinkSquareAlt}/></small></p>
 

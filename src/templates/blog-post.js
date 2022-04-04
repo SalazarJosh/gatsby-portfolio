@@ -48,7 +48,6 @@ export const BlogPostTemplate = ({
                   </li>
                 ))}
               </ul>
-              <span className="blog-date">{date}</span>
             </div>
             <div className="spacer-md"></div>
           </div>
