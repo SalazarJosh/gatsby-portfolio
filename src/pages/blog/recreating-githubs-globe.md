@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Recreating GitHub's Globe
 date: 2021-07-01
 featuredpost: false
-listed: false
+listed: true
 featuredimage: /img/github-globe.png
 description: GitHub took Three.js to the next level with their homepage design. In this post I share how I recreated the GitHub globe.
 tags:
