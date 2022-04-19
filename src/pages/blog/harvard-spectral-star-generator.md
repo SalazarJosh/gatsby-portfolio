@@ -2,7 +2,7 @@
 templateKey: 'blog-post'
 title: 'Harvard Spectral Star Generator'
 date: 2021-01-15
-featuredpost: true
+featuredpost: false
 listed: true
 featuredimage: /img/harvard-spectral-featured.png
 description: >-
