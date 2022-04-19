@@ -1,12 +1,11 @@
 ---
-templateKey: 'blog-post'
-title: 'Harvard Spectral Star Generator'
+templateKey: blog-post
+title: Harvard Spectral Star Generator
 date: 2021-01-15
-featuredpost: false
+featuredpost: true
 listed: true
 featuredimage: /img/harvard-spectral-featured.png
-description: >-
-  Tag along as I walk through how I made the Harvard spectral star generator
+description: Tag along as I walk through how I made the Harvard spectral star generator
 tags:
   - JavaScript
   - CSS

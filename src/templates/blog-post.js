@@ -56,7 +56,7 @@ export const BlogPostTemplate = ({
           <div class="columns">
             <div class="column">
               <div className="unlisted-block">
-                <p>This blog is currently unlisted.</p>
+                <p>This blog is currently unlisted and will not appear in search results.</p>
               </div>
             </div>
           </div>

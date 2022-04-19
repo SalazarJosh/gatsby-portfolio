@@ -49,7 +49,7 @@ export const tagPageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 1000) {
+    allMarkdownRemark(limit: 1000, filter: {frontmatter: {listed: {eq: true}}}) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
